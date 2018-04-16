@@ -1,0 +1,70 @@
+	<div class="container">
+			<legend>Add Recipe</legend>
+			<form class="col-form-legend" role="form" name="recipeForm" novalidate>
+			<div class="form-group row">
+					<level class="col-md-2 col-form-label">Recipe Name :</level>
+					<div class="col-md-3">
+						<input class="form-control" name="name" id="name"
+							type="text" placeholder="Recipe Name"
+							ng-model="recipe1.name" required
+							ng-pattern="/^[a-z. A-Z. 0-9]*$/" ng-maxlength="50"
+							ng-blur="checkRecipeExist(recipe1.name)"
+							ng-change="isRecipeExist = false">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<level class="col-md-2 col-form-label">Ingredient1 :</level>
+					<div class="col-md-3">
+						<input class="form-control" name="firstIngredient" id="firstIngredient"
+							type="text" placeholder="First Ingredient"
+							ng-model="recipe1.firstIngredient" required
+							ng-pattern="/^[a-z. A-Z. 0-9]*$/" ng-maxlength="50"
+							ng-blur="checkRecipeExist(recipe1.firstIngredient)"
+							ng-change="isRecipeExist = false">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<level class="col-md-2 col-form-label">Ingredient2 :</level>
+					<div class="col-md-3">
+						<input class="form-control" name="secondIngredient" id="secondIngredient"
+							type="text" placeholder="Second Ingredient"
+							ng-model="recipe1.secondIngredient" required
+							ng-pattern="/^[a-z. A-Z. 0-9]*$/" ng-maxlength="50"
+							ng-blur="checkRecipeExist(recipe1.secondIngredient)"
+							ng-change="isRecipeExist = false">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<level class="col-md-2 col-form-label">Ingredient3 :</level>
+					<div class="col-md-3">
+						<input class="form-control" name="thirdIngredient" id="thirdIngredient"
+							type="text" placeholder="Third Ingredient"
+							ng-model="recipe1.thirdIngredient" required
+							ng-pattern="/^[a-z. A-Z. 0-9]*$/" ng-maxlength="50"
+							ng-blur="checkRecipeExist(recipe1.thirdIngredient)"
+							ng-change="isRecipeExist = false">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<level class="col-md-2 col-form-label">Ingredient4 :</level>
+					<div class="col-md-3">
+						<input class="form-control" name="fourthIngredient" id="fourthIngredient"
+							type="text" placeholder="Fourth Ingredient"
+							ng-model="recipe1.fourthIngredient" required
+							ng-pattern="/^[a-z. A-Z. 0-9]*$/" ng-maxlength="50"
+							ng-blur="checkRecipeExist(recipe1.fourthIngredient)"
+							ng-change="isRecipeExist = false">
+					</div>
+				</div>
+				<div class="form-group">
+				   <div class="col-lg-offset-3 col-lg-10">
+				   <button type="submit" ng-disable="recipeForm.$valid" ng-click="addRecipe(recipeForm.$valid,recipe1)" ng-disabled="buttonDisabled" class="btn btn-default">Submit</button>
+				    
+				    <button type="reset"  ng-click="reset()" class="btn btn-default">Cancel</button>
+				   </div>
+			</form>
+	</div>

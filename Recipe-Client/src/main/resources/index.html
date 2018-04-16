@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Recipe Manager</title>
+<link href="css/app.css" rel="stylesheet" type="text/css"/>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<script src="script/require.js"></script>
+<script src="script/angular.js"></script>
+<script src="script/angular-resource.js"></script>
+<script src="script/angular-route.min.js"></script>
+<script src="script/jquery.js"></script>
+<script src="script/bootstrap.js"></script>
+<script src="script/app.js"></script>
+
+</head>
+<body class="container" ng-app='recipeManager' ng-controller="recipeController">
+<h2>                           Recipe Manager                        </h2>
+     <div class="container-fluid">
+	<div class="panel panel-default col-md-8">
+		<div class="panel col-md-3">
+			<div>
+			<select ng-init = "fetchRecipeList()" ng-model="recipe.name" class="form-control" id="recipeId"  ng-change="fetchRecipe(recipe)"
+                                placeholder="Recipe List"    ng-options="recipe.name for recipe in recipeList">
+                               <option ng-if="!model" value="">Recipe List</option>
+                            </select></div>
+			<div>
+			<ul class="nav navbar-nav">
+				<a href="#/addRecipe">Add Recipe</a>
+			</ul>
+			</div>
+		</div>
+		<div class="panel col-md-6">
+		<div ng-view></div>
+		</div>
+	</div>
+</div> 
+
+    
+</body>
+</html>
